@@ -28,7 +28,7 @@ fn setup_camera(
 ) {
     let mut camera = GstCamera::new(
         0,
-        Some(CameraFormat::new_from(640, 480, FrameFormat::MJPEG, 30)),
+        Some(CameraFormat::new_from(640, 480, FrameFormat::YUYV, 30)),
     )
     .expect("cannot find any camera");
 
