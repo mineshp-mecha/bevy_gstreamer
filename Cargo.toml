@@ -26,6 +26,7 @@ image = { version = "0.25", features = ["jpeg"] }
 jpeg-decoder = "0.3.0"
 bytemuck = { version = "1.13", features = ["derive"] }
 regex = "1.7"
+bevy_image = "0.15.0"
 
 [[example]]
 name = "camera"

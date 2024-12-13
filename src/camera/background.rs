@@ -15,7 +15,7 @@ use bevy::render::render_resource::{
     TextureViewDimension, VertexAttribute, VertexFormat, VertexStepMode,
 };
 use bevy::render::renderer::{RenderContext, RenderDevice, RenderQueue};
-use bevy::render::texture::BevyDefault;
+use bevy_image::BevyDefault;
 use bevy::render::view::{ExtractedView, ViewTarget};
 use image::buffer::ConvertBuffer;
 use image::RgbaImage;
@@ -130,13 +130,13 @@ impl FromWorld for BackgroundPipeline {
             layout: Some(&render_pipeline_layout),
             vertex: RawVertexState {
                 module: &shader,
-                entry_point: "vs_main",
+                entry_point: Some("vs_main"),
                 compilation_options: Default::default(),
                 buffers: &[Vertex::desc()],
             },
             fragment: Some(RawFragmentState {
                 module: &shader,
-                entry_point: "fs_main",
+                entry_point: Some("fs_main"),
                 compilation_options: Default::default(),
                 targets: &[Some(ColorTargetState {
                     format: TextureFormat::bevy_default(),
